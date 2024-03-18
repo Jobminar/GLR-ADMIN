@@ -1,0 +1,44 @@
+.blogsandregister{
+    display: grid;
+    grid-template-columns: 45% 45%;
+    justify-content: center;
+    /* border: 1px solid black; */
+    gap: 4rem;
+    margin: 1.5rem 0rem;
+
+}
+.home-blogs{
+    /* border: 1px solid black; */
+    height: 15rem;
+    background-color: #E14C2E;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 40% 50%;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.register-blogs{
+    /* border: 1px solid black; */
+    height: 15rem;
+    background-color: #2B3E4E;
+    border-radius: 10px;
+    grid-template-columns: 40% 50%;
+    display: grid;
+    grid-template-columns: 40% 50%;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.register-blogs button{
+    border: 1px solid white;
+    width: 10rem;
+    height: 2.5rem;
+    margin: 1rem;
+}
+.home-blogs button{
+    border: 1px solid white;
+    width: 10rem;
+    height: 2.5rem;
+    margin: 1rem;
+}

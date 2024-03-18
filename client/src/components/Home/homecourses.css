@@ -1,0 +1,44 @@
+.home-cources-con{
+    /* border: 1px solid black; */
+    display: flex;
+    flex-wrap: wrap;
+    /* border: 1px solid black; */
+    justify-content: space-evenly;
+    gap: 2rem;
+}
+.course-map-con{
+   width: 20rem;
+  
+   
+}
+.course-map-img{
+    position: relative;
+}
+.course-map-con p{
+    position:absolute;
+    top: 2rem;
+}
+.course-head-navigation{
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 4rem;
+    align-items: center;
+}
+.course-head-navigation h1{
+    font-family: "Comic Neue", cursive;
+  font-weight: 600;
+  font-style: normal;
+  color: white;
+  font-size: 30px;
+}
+.course-head-navigation button{
+    width: 10rem;
+    height: 2.5rem;
+    background-color: #00A1F2;
+    color: white;
+}
+.home-courses-con{
+    /* border: 1px solid black; */
+    padding-bottom:2rem ;
+    background-color: #02457B;
+}

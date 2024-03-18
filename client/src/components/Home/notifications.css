@@ -1,0 +1,15 @@
+.home-notifi-main-con{
+    border: 1px solid black;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+}
+
+.home-notifi-sub-con{
+    display: grid;
+    grid-template-columns: 32% 32% 32%;
+    justify-content: space-between;
+    padding: 1rem;
+    border-right: 1px solid #E2DCDC;
+}

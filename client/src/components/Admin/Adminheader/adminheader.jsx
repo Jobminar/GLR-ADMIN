@@ -15,7 +15,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
-import logo from '../../../assets/images/logo.jpeg'
+import logo from '../../../assets/images/logo.png'
 
 const drawerWidth = 240;
 const navItems = ['Courseupload', 'Blogsupload', 'Careersupload'];

@@ -15,7 +15,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
-import logo from '../../assets/images/logo.jpeg'
+import logo from '../../assets/images/logo.png'
 
 const drawerWidth = 240;
 const navItems = ['Aboutus', 'Courses', 'Careers','Contactus','Blogs','Signin'];
@@ -54,8 +54,9 @@ function Navbar(props) {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar component="nav">
-        <Toolbar>
+      <AppBar component="nav" sx={{backgroundColor:'white',height:'70px'}}>
+        <Toolbar sx={{display:'grid',gridTemplateColumns:'30% 50% 30%',alignItems:'center'}}>
+          <div>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -71,16 +72,23 @@ function Navbar(props) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-        < img src={logo} alt='chandra' style={{width:"15%",height:"50px"}} onClick={()=>navigate('/')}/>
+        < img src={logo} alt='chandra' style={{width:"30%",height:"60px"}} onClick={()=>navigate('/')}/>
           </Typography>
+          </div>
+         <div>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }} onClick={() => navigate("/" + item)}>
+              <Button key={item} sx={{ color: '#353535' }} onClick={() => navigate("/" + item)}>
                 {item}
                 
               </Button>
             ))}
           </Box>
+          </div>
+          <div>
+crcghjk
+          </div>
+         
         </Toolbar>
       </AppBar>
       <nav>
@@ -100,13 +108,17 @@ function Navbar(props) {
           {drawer}
         </Drawer>
       </nav>
-      <Box component="main" sx={{ p: 3 }}>
+      <Box component="main"   sx={{
+    marginLeft: '0%',
+    marginRight: '0%'
+  }}>
         <Toolbar />
-        <div style={{width:'100%' , height:'100%'}}>
-        {props.children}
-        </div>
+       
       
       </Box>
+      <div style={{width:'100%' , height:'100%',marginTop:'6%',marginLeft:'0%',marginRight:'0%'}}>
+        {props.children}
+        </div>
     </Box>
   );
 }

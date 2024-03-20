@@ -13,82 +13,92 @@ import Adminnavbar from "./Admin/Adminheader/adminheader";
 import Courseupload from "./Admin/Courseupload/courseupload";
 import Blogsupload from "./Admin/Blogsupload/blogsupload";
 import Careersupload from "./Admin/Careesupload/careersupload";
+import Blogpreview from "./Blogs/blogpreview";
 
 function Routing() {
   return (
     <>
       <BrowserRouter>
+      <Navbar/>
         <Routes>
           <Route
             path="/"
             element={
-              <Navbar>
+              
                 <Home />
-              </Navbar>
+             
             }
           />
           <Route
             path="/Aboutus"
             element={
-              <Navbar>
+              
                 <Aboutus />
-              </Navbar>
+             
             }
           />
           <Route
             path="/Courses"
             element={
-              <Navbar>
+              
                 <Courses />
-              </Navbar>
+             
             }
           />
           <Route
             path="/Careers"
             element={
-              <Navbar>
+             
                 <Careers />
-              </Navbar>
+           
             }
           />
           <Route
             path="/Contactus"
             element={
-              <Navbar>
+             
                 <Contactus />
-              </Navbar>
+            
             }
           />
           <Route
             path="/Blogs"
             element={
-              <Navbar>
+            
                 <Blogs />
-              </Navbar>
+             
             }
           />
           <Route
             path="/Signup"
             element={
-              <Navbar>
+              
                 <Signup />
-              </Navbar>
+              
             }
           />
           <Route
             path="/signin"
             element={
-              <Navbar>
+            
                 <LoginForm />
-              </Navbar>
+            
+            }
+          />
+          <Route
+            path="/blogview"
+            element={
+              
+                <Blogpreview />
+              
             }
           />
           <Route
             path="/otp"
             element={
-              <Navbar>
+             
                 <OTP />
-              </Navbar>
+              
             }
           />
   

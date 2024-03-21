@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './header.css'
 import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -18,7 +19,7 @@ import { useNavigate } from 'react-router-dom';
 import logo from '../../assets/images/logo.png'
 
 const drawerWidth = 240;
-const navItems = ['Aboutus', 'Courses', 'Careers','Contactus','Blogs','Signin'];
+const navItems = ['Aboutus', 'Courses', 'Careers','Contactus','Blogs'];
 
 function Navbar(props) {
   
@@ -55,8 +56,8 @@ function Navbar(props) {
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar component="nav" sx={{backgroundColor:'white',height:'70px'}}>
-        <Toolbar sx={{display:'grid',gridTemplateColumns:'30% 50% 30%',alignItems:'center'}}>
-          <div>
+        <Toolbar sx={{display:'grid',gridTemplateColumns:'30% 40% 30%',alignItems:'center'}}>
+          <div className='logo-section'>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -70,10 +71,15 @@ function Navbar(props) {
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            // sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-        < img src={logo} alt='chandra' style={{width:"30%",height:"60px"}} onClick={()=>navigate('/')}/>
+        < img src={logo} alt='chandra' style={{width:"60px",height:"70px"}} onClick={()=>navigate('/')}/>
           </Typography>
+          <div className='logo-tittle'>
+          <h1>GLR-EDTECH</h1>
+          <p>Modern & Innovative Learning</p>
+          </div>
+         
           </div>
          <div>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
@@ -85,8 +91,13 @@ function Navbar(props) {
             ))}
           </Box>
           </div>
-          <div>
-crcghjk
+          <div className='buttons'>
+             <button className='signin-button' onClick={()=>{navigate('/signin')}}>
+                Signin
+             </button>
+             <button className='help-button'>
+               Help
+             </button>
           </div>
          
         </Toolbar>

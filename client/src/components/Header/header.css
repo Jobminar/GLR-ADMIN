@@ -1,0 +1,44 @@
+.signin-button{
+    background-color: #1981D5;
+    color: white;
+    text-align: center;
+    width: 8rem;
+    height: 2.5rem;
+    border-radius: 10px;
+}
+.help-button{
+   color: #1981D5;
+    background-color: white;
+    text-align: center;
+    width: 8rem;
+    height: 2.5rem;
+    border-radius: 10px;
+    border: 1px solid #1981D5;
+    border-radius: 10px;
+}
+.buttons{
+    display: flex;
+    justify-content: space-evenly;
+    /* border: 1px solid black; */
+}
+.logo-tittle{
+    /* border: 1px solid black; */
+    margin: 0px;
+}
+.logo-section{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    /* border: 1px solid black; */
+}
+.logo-section h1{
+    color: black;
+}
+.logo-section p{
+    color: #0E75BF;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21.08px;
+    text-align: left;
+
+}

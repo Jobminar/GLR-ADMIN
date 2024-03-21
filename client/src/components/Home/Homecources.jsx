@@ -10,20 +10,33 @@ const Homecources = () => {
              <h1>Fast track your progress<br/> with our course guide.</h1>
              <button>View all courses</button>
         </div>
-        <div className='home-cources-con'>
-             {Coursedata.map((course,index)=>{
-                return(
-                    <>
-                        <div className='course-map-con' key={index}>
-                            <div className='course-map-img'>
-                                <img src={course.img} alt='courseimage'/>
+        <div className='home-cources-con-sub'>
+             <div className='home-cources-con-sub-child'> 
+                    <div>
+                      <div className='course-tittle'>
+                         <p>DATA SCIENCE</p>
+                      </div>
+                           
+                    </div>
+                    <div className='price-explore'>
+                           19999
+                    </div>
+             </div>
+             <div className='home-cources-con-sub-child'> 
 
-                            </div>
-                            <p>{course.desc}</p>
-                        </div>
-                    </>
-                )
-             })}
+            </div>
+            <div className='home-cources-con-sub-child'> 
+
+            </div>
+            <div className='home-cources-con-sub-child'> 
+
+            </div>
+            <div className='home-cources-con-sub-child'> 
+
+            </div>
+            <div className='home-cources-con-sub-child'> 
+
+            </div>
         </div>
     </div>
       

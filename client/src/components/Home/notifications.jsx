@@ -13,7 +13,7 @@ const Notificationshome = () => {
           {firstThreeNotifications.map((notification, index) => {
             return (
               <div key={index} className='notification-sub'>
-                <p>{notification.date}</p>
+                <p className='date'>{notification.date}</p>
                 <p>{notification.notification}</p>
               </div>
             );

@@ -6,6 +6,7 @@ import Homeaboutus from './homeaboutus'
 import Blogsandregister from './blogs&register'
 import Notificationshome from './notifications'
 import './home.css'
+import mainimg from '../../assets/images/banner.png'
 
 const Home = () => {
   const {fullname} = useContext(Data)
@@ -13,7 +14,7 @@ const Home = () => {
       <>
           <div>
             <div className='main-image'>
-                 
+                 <img src={mainimg} alt='home image'/>
             </div>
             <Notificationshome/>
             <Homecources/>

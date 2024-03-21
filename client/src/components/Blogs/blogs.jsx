@@ -1,56 +1,67 @@
-import React, { useState, useEffect } from 'react';
+// import React, { useContext } from 'react';
+// import { Data } from '../Contextprovider';
+// Import CircularProgress from MUI
+
+// const Blogs = () => {
+//   const blogsdata = useContext(Data); // No need for destructuring here
+
+//   console.log(blogsdata, 'lkjhgfdfhjkjf');
+
+ 
+
+//   if (!blogsdata || blogsdata.length === 0) {
+//     return <CircularProgress />;
+//   }
+
+//   return (
+//     <div>
+//       {blogsdata.map((ele, ind) => {
+//         return (
+//           <div key={ind}>
+//             <li>{ele.blogName}</li>
+//           </div>
+//         );
+//       })}
+//     </div>
+//   );
+// };
+
+// export default Blogs;
+
+import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './blogs.css'
+import CircularProgress from '@mui/material/CircularProgress'; 
+import { Data } from '../Contextprovider';
 
 const Blogs = () => {
+  const {fullname,blogsData} = useContext(Data)
   const navigate = useNavigate();
-  const [blogData, setBlogData] = useState([]);
+ console.log(blogsData,'blog data in blog page')
 
-  useEffect(() => {
-    fetchBlogs();
-  }, []);
-
-  const fetchBlogs = async () => {
-    try {
-      const response = await fetch('https://glr-be.onrender.com/getblogs');
-      if (!response.ok) {
-        throw new Error('Failed to fetch blogs');
-      }
-      const data = await response.json();
-      console.log(data)
-      setBlogData(data);
-    } catch (error) {
-      console.error('Error fetching blogs:', error);
-      // Handle error gracefully, e.g., display a message to the user
-    }
-  };
-
-  const [selectedblog, setSelectedblog] = useState('');
-  
-  const handleProduct = (item) => {
-    setSelectedblog(item);
-    navigate('/blogview', { state: { selectedblog: item } });
-    console.log(item,'data')
-  };
+ 
+  if (!blogsData || blogsData.length === 0) {
+    return <CircularProgress/>
+  }
 
   return (
     <>
+    <p>{fullname}</p>
       <div className="blogs-con">
+        
         <div className="side-head-blogs">
           <h1>BLOGS</h1>
         </div>
         <p>Your ride's care, our expertise, both tailored true, Car services aplenty, all just for you!</p>
-        <div className="blog-container">
-          {blogData.map((blog, index) => (
-            <div key={index} className="blog-item">
-              <img src={`data:image/jpeg;base64,${blog.blogImage}`} alt={`Blog ${index + 1}`} onClick={() => handleProduct(blog)} />
-
-              <div className="relative-content">
-                <h2>{blog.blogName}</h2>
-                {/* Render additional blog information here if needed */}
+        <div>
+          {blogsData.map((item,index)=>{
+            return(
+              <div key={index}>
+                  <p>{item.blogName}</p>
+                  <p>{item.blogDescription}</p>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </>

@@ -1,8 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { Data } from '../Contextprovider'
 
 const Careers =(()=>{
+  const {careerdata} = useContext(Data)
+  console.log(careerdata,'career data in career page')
     return (
-        <div>careers</div>
+        <>
+            {careerdata.map((item,index)=>{
+              return(
+                <>
+                       <p>{item.postName}</p>
+                </>
+              )
+            })}
+        </>
       )
     
 })

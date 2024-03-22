@@ -5,7 +5,7 @@ export const Data = createContext();
 
 const ContextProvider = ({ children }) => {
   const [blogsData, setBlogsData] = useState([]);
-
+// blogs get api
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -20,6 +20,7 @@ const ContextProvider = ({ children }) => {
     fetchData();
   }, []);
 
+// careers get api
 
   const[careerdata,setcareerdata] = useState([]);
 

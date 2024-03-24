@@ -19,126 +19,44 @@ function Routing() {
   return (
     <>
       <BrowserRouter>
-      <Navbar/>
+        <Navbar />
         <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Aboutus" element={<Aboutus />} />
+          <Route path="/Courses" element={<Courses />} />
+          <Route path="/Careers" element={<Careers />} />
+          <Route path="/Contactus" element={<Contactus />} />
+          <Route path="/Blogs" element={<Blogs />} />
+          <Route path="/Signup" element={<Signup />} />
+          <Route path="/signin" element={<LoginForm />} />
+          <Route path="/blogview" element={<Blogpreview />} />
+          <Route path="/otp" element={<OTP />} />
+          {/* Admin routing */}
+          <Route path="/adminnavbar" element={<Adminnavbar />} />
           <Route
-            path="/"
+            path="/Courseupload"
             element={
-              
-                <Home />
-             
-            }
-          />
-          <Route
-            path="/Aboutus"
-            element={
-              
-                <Aboutus />
-             
-            }
-          />
-          <Route
-            path="/Courses"
-            element={
-              
-                <Courses />
-             
-            }
-          />
-          <Route
-            path="/Careers"
-            element={
-             
-                <Careers />
-           
-            }
-          />
-          <Route
-            path="/Contactus"
-            element={
-             
-                <Contactus />
-            
-            }
-          />
-          <Route
-            path="/Blogs"
-            element={
-            
-                <Blogs />
-             
-            }
-          />
-          <Route
-            path="/Signup"
-            element={
-              
-                <Signup />
-              
-            }
-          />
-          <Route
-            path="/signin"
-            element={
-            
-                <LoginForm />
-            
-            }
-          />
-          <Route
-            path="/blogview"
-            element={
-              
-                <Blogpreview />
-              
-            }
-          />
-          <Route
-            path="/otp"
-            element={
-             
-                <OTP />
-              
-            }
-          />
-  
-
-          // Admin routing
-
-          <Route
-          path="/adminnavbar"
-          element={
-              <Adminnavbar />
-          }
-        />
-          
-        <Route
-          path="/Courseupload"
-          element={
-             <Adminnavbar>
-             <Courseupload />
-             </Adminnavbar>
-            
-          }
-        />
-        <Route
-          path="/Blogsupload"
-          element={
               <Adminnavbar>
-              <Blogsupload />
+                <Courseupload />
               </Adminnavbar>
-              
-          }
-        />
-        <Route
-          path="/Careersupload"
-          element={
-            <Adminnavbar>
-            <Careersupload />
-            </Adminnavbar>
-              
-          }
-        />
+            }
+          />
+          <Route
+            path="/Blogsupload"
+            element={
+              <Adminnavbar>
+                <Blogsupload />
+              </Adminnavbar>
+            }
+          />
+          <Route
+            path="/Careersupload"
+            element={
+              <Adminnavbar>
+                <Careersupload />
+              </Adminnavbar>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </>

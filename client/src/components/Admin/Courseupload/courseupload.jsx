@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useEffect } from 'react';
 
 const CourseUpload = () => {
   const [formData, setFormData] = useState({
@@ -10,43 +11,63 @@ const CourseUpload = () => {
     price: '',
     instructor: '',
     duration: '',
-    file: '',
+    courseImage: null,
     topics: '',
+    prerequisites:'',
     publishingOptions: '',
     keywords:''
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    // console.log(name , value)
     setFormData({
       ...formData,
       [name]: value
     });
   };
+  const handleImageChange = (e) => {
+    const file = e.target.files[0]; // Get the first selected file
+    setFormData({
+      ...formData,
+      courseImage: file
+    });
+  };
 
-  const handleSubmit = async (e) => {
-    console.log(formData)
-    e.preventDefault();
+    useEffect(()=>{
+        console.log(formData)
+      },[formData])
+
+  const handleSubmit = async () => {
+    const data = new FormData();
+  
+    // Append all form fields to the FormData instance
+    Object.entries(formData).forEach(([key, value]) => {
+      // If it's a file (courseImage), append it directly
+      if (key === 'courseImage') {
+        data.append(key, value);
+      } else {
+        data.append(key, value);
+      }
+    });
+  
     try {
-      const response = await axios.post('https://glr-be.onrender.com/course', formData);
-      if (response.ok) {
+      const response = await axios.post('https://glr-be.onrender.com/postcourse', data, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+  
+      if (response.status === 201) {
         alert('Course submitted successfully');
-        // setFormData({
-        //   courseCode: '',
-        //   title: '',
-        //   description: '',
-        //   price: '',
-        //   instructor: '',
-        //   duration: '',
-        //   file: '',
-        //   topics: [],
-        //   prerequisites: []
-        // });
+        // Reset form data here...
       }
     } catch (error) {
       console.error('Error:', error);
     }
+    console.log(data)
   };
+  
 
   return (
     <div style={{ width: '70%', margin: '1rem auto', padding: '0rem',display:'flex',flexDirection:'column' ,gap:'1rem'}}>
@@ -148,13 +169,12 @@ const CourseUpload = () => {
         </div>
         {/* File */}
         <div>
-          <label htmlFor="file" className="block mb-2 text-sm font-medium text-gray-900">File</label>
+          <label htmlFor="courseImage" className="block mb-2 text-sm font-medium text-gray-900">File</label>
           <input
             type="file"
-            id="file"
-            name="file"
-            value={formData.file}
-            onChange={handleChange}
+            id="courseImage"
+            name="courseImage"
+            onChange={handleImageChange}
             className="border border-gray-300 rounded-md px-3 py-2 w-full"
             required
           />

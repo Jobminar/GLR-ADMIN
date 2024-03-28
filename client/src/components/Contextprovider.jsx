@@ -38,14 +38,32 @@ const ContextProvider = ({ children }) => {
     fetchCareer(); // Corrected function call
   }, []); // Empty dependency array to run only once on mount
   
- 
+//  courses get api
+  const[coursedata,setcoursedata] = useState([]);
+
+    useEffect(() => {
+      const fetchCareer = async () => { // Corrected function name: fetchCareer
+        try {
+          const response = await axios.get(`https://glr-be.onrender.com/getcourse`);
+          const data = response.data;
+          setcoursedata(data);
+        } catch (error) {
+          console.log(error, 'error');
+        }
+      };
+    
+      fetchCareer(); // Corrected function call
+    }, []); // Empty dependency array to run only once on mount
+
+
   const fullname = 'anil'
 
   console.log(blogsData, 'blogs data');
-  console.log(careerdata,'careerdata')
+  console.log(careerdata,'careerdata');
+  console.log(coursedata,'coursedata');
 
   return (
-    <Data.Provider value={{ blogsData ,fullname , careerdata}}>
+    <Data.Provider value={{ blogsData ,fullname , careerdata , coursedata}}>
       {children}
     </Data.Provider>
   );

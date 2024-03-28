@@ -19,7 +19,10 @@ const Notificationshome = () => {
             );
           })}
         </div>
+        <div className='viewallcareers'>
         <button>View all notifications</button>
+        </div>
+       
       </div>
     </>
   );

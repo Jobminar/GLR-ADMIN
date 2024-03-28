@@ -77,7 +77,40 @@
    .pagination button:hover{
    cursor: pointer;
    }
-   
+   .blog-main-con {
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: space-evenly;
+    gap: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+   /* Add box shadow */
+}
+   .blogs-sub-con{ 
+    /* border: 1px solid black; */
+    width: 18rem;
+    height: 23rem;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+   }
+   .blog-image{
+        width: 17rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin: 0.5rem auto;
+        height: 10rem;
+        /* border: 1px solid black; */
+   }
+   .blog-image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+
+   }
+   .blog-content{
+    padding: 0.5rem;
+    display: grid;
+    grid-template-rows: 40% 40% 20%;
+   }
    
    @media screen and (min-width: 360px) and (max-width: 600px){
        .blogs-con{

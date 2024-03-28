@@ -11,32 +11,7 @@ const Homecources = () => {
              <button>View all courses</button>
         </div>
         <div className='home-cources-con-sub'>
-             <div className='home-cources-con-sub-child'> 
-                    <div>
-                      <div className='course-tittle'>
-                         <p>DATA SCIENCE</p>
-                      </div>
-                           
-                    </div>
-                    <div className='price-explore'>
-                           19999
-                    </div>
-             </div>
-             <div className='home-cources-con-sub-child'> 
-
-            </div>
-            <div className='home-cources-con-sub-child'> 
-
-            </div>
-            <div className='home-cources-con-sub-child'> 
-
-            </div>
-            <div className='home-cources-con-sub-child'> 
-
-            </div>
-            <div className='home-cources-con-sub-child'> 
-
-            </div>
+            
         </div>
     </div>
       

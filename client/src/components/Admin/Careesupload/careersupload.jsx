@@ -13,7 +13,7 @@ const CareersUpload = () => {
     skills: "",
     experience: "",
     education: "",
-    salary: "",
+    salary: 0,
     applicationDeadline: "",
     applicationUrl: "",
     contactPerson: "",
@@ -21,16 +21,27 @@ const CareersUpload = () => {
     careerImage: null,
     additionalField: "",
   });
+  console.log(formData,'formdata')
 
-  // Handler for input changes
   const handleChange = (e) => {
-    const { name } = e.target;
-    const value = e.target.type === "file" ? e.target.files[0] : e.target.value;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    const { name, value } = e.target;
+    // Handling file separately because it's not a string value
+    if (name === "image") {
+      setFormData({ ...formData, image: e.target.files[0] });
+      console.log(name , typeof(value),value)
+    } 
+    if (name === "salary") {
+      setFormData({ ...formData, [name]: parseInt(value) || "" }); 
+      console.log(name , typeof(value), value, 'number');
+    }
+    
+      
+    else {
+      setFormData({ ...formData, [name]: value });
+      console.log(name , typeof(value),value)
+    }
   };
+
 
   // Handler for form submission
   const handleSubmit = async (e) => {
@@ -42,7 +53,7 @@ const CareersUpload = () => {
     for (const key in formData) {
       form.append(key, formData[key]);
     }
-
+  console.log(form,'handle submit')
     try {
       const response = await axios.post(
         "https://glr-be.onrender.com/postcareer",
@@ -156,15 +167,15 @@ const CareersUpload = () => {
       {/* category */}
       <div>
         <label
-          htmlFor="category"
+          htmlFor="jobCategory"
           className="block mb-2 text-sm font-medium text-gray-900"
         >
           Category
         </label>
         <select
-          id="category"
-          name="category"
-          value={formData.category}
+          id="jobCategory"
+          name="jobCategory"
+          value={formData.jobCategory}
           onChange={handleChange}
           className="border border-gray-300 rounded-md px-3 py-2 w-full"
           required
@@ -341,14 +352,14 @@ const CareersUpload = () => {
       </div>
       <div>
         <label
-          htmlFor="career_image"
+          htmlFor="careerimage"
           className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
         >
           Career Image
         </label>
         <input
           type="file"
-          id="career_image"
+          id="careerimage"
           name="careerImage"
           value={formData.careerImage}
           onChange={handleChange}

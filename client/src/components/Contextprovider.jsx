@@ -9,7 +9,7 @@ const ContextProvider = ({ children }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://glr-be.onrender.com/getblogs");
+        const response = await axios.get("https://glr-be.onrender.com/blog");
         const data = response.data; 
         setBlogsData(data);
       } catch (error) {
@@ -58,9 +58,9 @@ const ContextProvider = ({ children }) => {
 
   const fullname = 'anil'
 
-  console.log(blogsData, 'blogs data');
-  console.log(careerdata,'careerdata');
-  console.log(coursedata,'coursedata');
+  // console.log(blogsData, 'blogs data');
+  // console.log(careerdata,'careerdata');
+  // console.log(coursedata,'coursedata');
 
   return (
     <Data.Provider value={{ blogsData ,fullname , careerdata , coursedata}}>

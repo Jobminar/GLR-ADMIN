@@ -1,19 +1,18 @@
 .blogpreview-con{
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 .title-back{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.blogpreview-con h1{
-    font-family: Lato;
-    font-size: 24px;
+.tittle-date-meachine h2{
+    font-family: "Roboto";
+    font-size: 30px;
     font-weight: 800;
     line-height: 29px;
     letter-spacing: 0em;
-    text-align: center;
-    margin: 1rem 3rem;
+    color: #085390;
 }
 .blogimage{
     width: 80%;
@@ -27,15 +26,32 @@
     width: 100%;
     height: 100%;
     border-radius: 15px;
+    margin: 1rem;
    
 }
 .blogpreview-con p{
     margin: 1rem;
-    font-family: Lato;
+    color: black;
     font-size: 20px;
     font-weight: 400;
     line-height: 30px;
     letter-spacing: 0em;
     text-align: left;
     margin: 1rem 3rem;
+}
+.tittle-date-meachine{
+    /* border: 1px solid black; */
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+    align-items: center;
+}
+.desc-head{
+    margin: 1rem;
+    font-family: "Roboto";
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
 }

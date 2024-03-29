@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import './careers.css'
 
 const Careers = () => {
   const [careerData, setCareerData] = useState([]);
@@ -18,29 +19,30 @@ const Careers = () => {
     };
 
     fetchCareerData();
-  }, []); // The empty array ensures this effect runs only once after the initial render
+  }, []); 
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexWrap: "wrap",
-        gap: "20px",
-        justifyContent: "center",
-      }}
-    >
+    <div className="career-main-con">
       {careerData.map((item, index) => (
-        <div
-          key={index}
-          style={{
-            width: "300px",
-            border: "1px solid #ccc",
-            borderRadius: "8px",
-            padding: "20px",
-            boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
-          }}
-        >
-          <h3>{item.jobTitle}</h3>
+        <div key={index} className="career-con">
+            <div className='career-image'>
+              <img
+                src={`data:image/png;base64, ${item.careerImage}`}
+                alt={`Item ${item.jobTitle}`}
+              />
+            </div>
+          <h3>{item.companyName} is Hiring : {item.jobTitle} ({item.experience})</h3>
+        
+          <p className="deadline">
+              {new Date(item.applicationDeadline).toLocaleDateString(undefined, {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+              })}
+            </p>
+        
+          <p>{item.jobDescription.substring(0, 100)}</p>
+          <p className="readmore">Read more</p>
         </div>
       ))}
     </div>

@@ -1,153 +1,196 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import axios from 'axios';
 import "./signup.css";
+import Swal from 'sweetalert2';
 export default function Signup() {
   const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
-    fullName: "",
-    mobileNumber: "",
-    email: "",
-    gender: "Male", // default to Male
-    dateOfBirth: "",
-    location: "",
-    alternateNumber: "",
+    name: '',
+    email: '',
+    password: '',
+    mobile: '',
+    dateOfBirth: '',
+    qualification: '',
+    branch: '',
+    passedOutYear: '',
+    deviceId: '', 
+    privacyPolicy: false
   });
-  const handleLoginClick = () => {
-    // Navigate to the /login route
-    navigate("/signin");
-  };
+ 
   const handleInputChange = (e) => {
-    const { id, value } = e.target;
-    setFormData((prevData) => ({ ...prevData, [id]: value }));
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
-      // Make a POST request to the /signup endpoint
-      const response = await fetch("https://glr-be.onrender.com/user/signup", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+      const response = await axios.post('http://localhost:4000/signup', formData);
+      console.log(response.data);
+      
+      // Display success message
+      Swal.fire({
+        icon: 'success',
+        title: 'Signup Successful!',
+        text: 'You have successfully signed up.',
       });
 
-      // Check if the request was successful (status code 2xx)
-      if (response.ok) {
-        console.log("User successfully registered");
-        // Optionally, you can redirect the user to the login page after successful registration
-        navigate("/signin");
-      } else {
-        // Handle errors for unsuccessful requests
-        const data = await response.json();
-        console.error("Registration failed:", data.error);
-        // Handle the error in your UI, show a message to the user, etc.
-      }
+      // Redirect or do something else upon successful signup
     } catch (error) {
-      console.error("Error during registration:", error);
-      // Handle the error in your UI, show a message to the user, etc.
+      Swal.fire({
+        icon: 'error',
+        title: 'Failed to success!',
+        text: error,
+      });
+      console.error('Error signing up:', error);
     }
   };
 
+  const handleLoginClick = () => {
+    // Define the logic for handling login click
+    navigate('/login'); // Example navigation to login page
+  };
+
+
+
+
   return (
-    // <div className="container mt-5 mb-5" style={{ maxWidth: "400px" }}>
     <div className="signup-con">
-      <div
-        className="col-md-12 text-center p-4"
-        style={{ boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)" }}
-      >
+      <div className="col-md-12 text-center p-4" style={{ boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)" }}>
         <div className="text-center mb-4">
-          <h2 className="h3 mb-3 font-weight-bold font-['Saira'] text-danger">
-            Create an account
-          </h2>
+          <h2 className="h3 mb-3 font-weight-bold" style={{ fontFamily: "Saira", color: "red" }}>Create an account</h2>
         </div>
         <form onSubmit={handleSubmit}>
           <div className="form-group mb-3">
             <input
+              name='name'
               type="text"
-              id="fullName"
-              className="form-control font-['Saira']"
-              placeholder="Full Name"
+              id="Name"
+              className="form-control"
+              placeholder="Name"
               required
+              value={formData.name}
               onChange={handleInputChange}
             />
           </div>
           <div className="form-group mb-3">
             <input
-              type="tel"
-              id="mobileNumber"
-              className="form-control font-['Saira']"
-              placeholder="Mobile Number"
-              required
-              onChange={handleInputChange}
-            />
-          </div>
-          <div className="form-group mb-3">
-            <input
+              name='email'
               type="email"
               id="email"
-              className="form-control font-['Saira']"
+              className="form-control"
               placeholder="Email"
               required
+              value={formData.email}
               onChange={handleInputChange}
             />
           </div>
           <div className="form-group mb-3">
-            <select
-              id="gender"
-              className="form-control font-['Saira']"
+            <input
+              name='password'
+              type="password"
+              id="password"
+              className="form-control"
+              placeholder="Password"
+              required
+              value={formData.password}
               onChange={handleInputChange}
-            >
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
-            </select>
+            />
           </div>
           <div className="form-group mb-3">
             <input
+              name='mobile'
+              type="tel"
+              id="mobile"
+              className="form-control"
+              placeholder="Mobile Number"
+              required
+              value={formData.mobile}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div className="form-group mb-3">
+            <input
+              name='dateOfBirth'
               type="date"
               id="dateOfBirth"
-              className="form-control font-['Saira']"
+              className="form-control"
               placeholder="Date of Birth"
               required
+              value={formData.dateOfBirth}
               onChange={handleInputChange}
             />
           </div>
           <div className="form-group mb-3">
             <input
+              name='qualification'
               type="text"
-              id="location"
-              className="form-control font-['Saira']"
-              placeholder="Location"
+              id="qualification"
+              className="form-control"
+              placeholder="Qualification"
               required
+              value={formData.qualification}
               onChange={handleInputChange}
             />
           </div>
           <div className="form-group mb-3">
             <input
-              type="tel"
-              id="alternateNumber"
-              className="form-control font-['Saira']"
-              placeholder="Alternate Number"
+              name='branch'
+              type="text"
+              id="branch"
+              className="form-control"
+              placeholder="Branch"
+              required
+              value={formData.branch}
               onChange={handleInputChange}
             />
           </div>
-          {/* <div className="form-group mb-3">
-              <input
-                type="password"
-                id="password"
-                className="form-control font-['Saira']"
-                placeholder="Password"
-                required
-                onChange={handleInputChange}
-              />
-            </div> */}
-
+          <div className="form-group mb-3">
+            <input
+              name='passedOutYear'
+              type="text"
+              id="passedOutYear"
+              className="form-control"
+              placeholder="Passed Out Year"
+              required
+              value={formData.passedOutYear}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div className="form-group mb-3">
+            <input
+              name='deviceId'
+              type="text"
+              id="deviceId"
+              className="form-control"
+              placeholder="Device ID"
+              required
+              value={formData.deviceId}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div className="form-group mb-3">
+            <input
+              type="checkbox"
+              id="privacyPolicy"
+              className="form-check-input"
+              required
+              checked={formData.privacyPolicy}
+              onChange={() => setFormData({ ...formData, privacyPolicy: !formData.privacyPolicy })}
+            />
+            <label htmlFor="privacyPolicy" className="form-check-label">
+              I agree to the privacy policy
+            </label>
+          </div>
           <button
             type="submit"
-            className="btn btn-danger btn-block mx-auto mt-2 font-['Saira']"
-            style={{ width: "200px" }}
+            className="btn btn-danger btn-block mx-auto mt-2"
+            style={{ width: "200px", fontFamily: "Saira" }}
           >
             SIGN UP
           </button>
@@ -156,8 +199,9 @@ export default function Signup() {
           <p className="mb-2">
             Already have an account?{" "}
             <span
-              className="text-primary cursor-pointer font-['Saira']"
+              className="text-primary cursor-pointer"
               onClick={handleLoginClick}
+              style={{ fontFamily: "Saira", cursor: "pointer" }}
             >
               Log In
             </span>
@@ -165,6 +209,5 @@ export default function Signup() {
         </div>
       </div>
     </div>
-    // </div>
   );
 }

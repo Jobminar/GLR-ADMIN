@@ -13,7 +13,10 @@ import Adminnavbar from "./Admin/Adminheader/adminheader";
 import Courseupload from "./Admin/Courseupload/courseupload";
 import Blogsupload from "./Admin/Blogsupload/blogsupload";
 import Careersupload from "./Admin/Careesupload/careersupload";
-import Blogpreview from "./Blogs/blogpreview";
+import Blogpreview from "./Blogs/blogpreview"
+import Student from "./Contactus/Student";
+import GetStudent from "./Contactus/GetStudent";
+import GetContact from "./Contactus/GetContact";
 
 
 function Routing() {
@@ -32,6 +35,8 @@ function Routing() {
           <Route path="/signin" element={<LoginForm />} />
           <Route path="/blogview" element={<Blogpreview />} />
           <Route path="/otp" element={<OTP />} />
+         <Route path="/getcontact" element={<GetContact />} />
+         
           {/* Admin routing */}
           <Route path="/adminnavbar" element={<Adminnavbar />} />
           <Route

@@ -16,10 +16,10 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
-import logo from '../../assets/images/logo.png'
+import logo from '../../assets/images/logo.jpeg'
 
 const drawerWidth = 240;
-const navItems = ['Aboutus', 'Courses', 'Careers','Contactus','Blogs'];
+const navItems = ['About us', 'Courses', 'Careers','Contactus','Blogs'];
 
 function Navbar(props) {
   

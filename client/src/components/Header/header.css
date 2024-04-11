@@ -1,4 +1,4 @@
-.signin-button{
+.signin-button {
     background-color: #1981D5;
     color: white;
     text-align: center;
@@ -6,8 +6,9 @@
     height: 2.5rem;
     border-radius: 10px;
 }
-.help-button{
-   color: #1981D5;
+
+.help-button {
+    color: #1981D5;
     background-color: white;
     text-align: center;
     width: 8rem;
@@ -16,29 +17,43 @@
     border: 1px solid #1981D5;
     border-radius: 10px;
 }
-.buttons{
+
+.buttons {
     display: flex;
     justify-content: space-evenly;
     /* border: 1px solid black; */
 }
-.logo-tittle{
+
+.logo-tittle {
     /* border: 1px solid black; */
     margin: 0px;
 }
-.logo-section{
+
+.logo-section {
     display: flex;
     gap: 1rem;
     align-items: center;
     /* border: 1px solid black; */
 }
-.logo-section h1{
+
+.logo-section h1 {
     color: black;
 }
-.logo-section p{
+
+.logo-section p {
     color: #0E75BF;
     font-size: 14px;
     font-weight: 500;
     line-height: 21.08px;
     text-align: left;
+}
+
+
+.app-bar-glass {
+    background: rgba(255, 255, 255, 0);
+
+
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
 
 }

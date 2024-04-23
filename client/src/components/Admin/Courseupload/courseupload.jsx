@@ -52,7 +52,7 @@ const CourseUpload = () => {
     });
   
     try {
-      const response = await axios.post('https://glr-be.onrender.com/postcourse', data, {
+      const response = await axios.post('https://glr-be-0izm.onrender.com/postcourse', data, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

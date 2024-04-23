@@ -10,7 +10,7 @@ const Notificationshome = () => {
   useEffect(() => {
     const fetchCareers = async () => {
       try {
-        const response = await axios.get('https://glr-be.onrender.com/getcareer');
+        const response = await axios.get('https://glr-be-0izm.onrender.com/getcareer');
         setCareersData(response.data);
       } catch (error) {
         console.log('Error occurred while fetching the careers', error);

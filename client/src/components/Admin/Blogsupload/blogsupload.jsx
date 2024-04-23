@@ -36,7 +36,7 @@ const CreateBlog = () => {
     }
 
     try {
-      await axios.post("https://glr-be.onrender.com/blog", formData, {
+      await axios.post("https://glr-be-0izm.onrender.com/blog", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

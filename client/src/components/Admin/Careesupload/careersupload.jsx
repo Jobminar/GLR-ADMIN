@@ -56,7 +56,7 @@ const CareersUpload = () => {
   console.log(form,'handle submit')
     try {
       const response = await axios.post(
-        "https://glr-be.onrender.com/postcareer",
+        "https://glr-be-0izm.onrender.com/postcareer",
         form,
         {
           headers: {

@@ -23,7 +23,7 @@ const OTP = () => {
     console.log("mobile number is ", mobileNumber);
     try {
       const response = await axios.post(
-        "https://glr-be.onrender.com/user/verify-otp",
+        "https://glr-be-0izm.onrender.com//user/verify-otp",
         { mobileNumber: mobileNumber, otp: otp.join("") }
       );
       console.log("OTP verification response:", response.data);

@@ -15,7 +15,6 @@ import Blogsupload from "./Admin/Blogsupload/blogsupload";
 import Careersupload from "./Admin/Careesupload/careersupload";
 import Blogpreview from "./Blogs/blogpreview";
 import Student from "./Contactus/Student";
-import GetStudent from "./Contactus/GetStudent";
 import GetContact from "./Contactus/GetContact";
 import CourseExplore from "./Courses/courseExplore";
 
@@ -23,7 +22,7 @@ function Routing() {
   return (
     <>
       <BrowserRouter>
-        <Navbar />
+        <Navbar/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Aboutus" element={<Aboutus />} />
@@ -37,10 +36,10 @@ function Routing() {
           <Route path="/otp" element={<OTP />} />
           <Route path="/getcontact" element={<GetContact />} />
           <Route path="/courseexplore" element={<CourseExplore />} />
-          <Route path="/student" element={<Student />} />
-          <Route path="/getstudent" element={<GetStudent />} />
+          {/* <Route path="/student" element={<Student />} /> */}
+          {/* <Route path="/getstudent" element={<GetStudent />} /> */}
           {/* Admin routing */}
-          <Route path="/adminnavbar" element={<Adminnavbar />} />
+          {/* <Route path="/adminnavbar" element={<Adminnavbar />} />
           <Route
             path="/Courseupload"
             element={
@@ -64,7 +63,7 @@ function Routing() {
                 <Careersupload />
               </Adminnavbar>
             }
-          />
+          /> */}
         </Routes>
       </BrowserRouter>
     </>

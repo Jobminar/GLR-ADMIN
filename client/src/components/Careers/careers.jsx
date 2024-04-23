@@ -7,7 +7,7 @@ const Careers = () => {
   useEffect(() => {
     const fetchCareerData = async () => {
       try {
-        const response = await fetch("https://glr-be.onrender.com/getcareer");
+        const response = await fetch("https://glr-be-0izm.onrender.com/getcareer");
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }

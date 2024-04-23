@@ -15,7 +15,6 @@ const Homeaboutus = () => {
                  <p>Fermentum odio eu feugiat pretium nibh. adipisicing elit. Deserunt esse natus corporis distinctio, eaque provident officiis quaerat animi atque commodi magnam dolores quo iste. Quis enim lobortis scelerisque fermentum vehicula in. Pellentesque condimentum ntum vehicula.Nulla convallis enim eu velit commodo condimentum.</p>
                  <p className='readmore'>Read more</p>
             </div>
-            
       </div>
    </>
   )

@@ -27,7 +27,7 @@ const ContactUs = () => {
       }
 
       // Send a POST request to the server with form data
-      const response = await axios.post('http://localhost:4000/postcontact', formData, {
+      const response = await axios.post('https://glr-be-0izm.onrender.com/postcontact', formData, {
         headers: {
           Authorization: `Bearer ${token}`, // Include JWT token in headers
         },

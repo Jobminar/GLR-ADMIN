@@ -17,7 +17,7 @@ const GetContact = () => {
             // navigate("/signin")
             throw new Error('User not authenticated');
           }
-        const response = await axios.get('http://localhost:4000/getcontact', {
+        const response = await axios.get('https://glr-be.onrender.com/getcontact', {
           headers: {
             Authorization: `Bearer ${token}` 
           }

@@ -1,21 +1,21 @@
-import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import "./signup.css";
-export default function Signup() {
-  const navigate = useNavigate();
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import "./signup.css"; // Import your CSS file for styling
+
+const Signup = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     mobileNumber: "",
     email: "",
-    gender: "Male", // default to Male
+    gender: "Male",
     dateOfBirth: "",
     location: "",
     alternateNumber: "",
   });
-  const handleLoginClick = () => {
-    // Navigate to the /login route
-    navigate("/signin");
-  };
+
+  const navigate = useNavigate();
+
   const handleInputChange = (e) => {
     const { id, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [id]: value }));
@@ -25,146 +25,131 @@ export default function Signup() {
     e.preventDefault();
 
     try {
-      // Make a POST request to the /signup endpoint
-      const response = await fetch("https://glr-be.onrender.com/user/signup", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await axios.post(
+        "https://glr-be.onrender.com/user/signup",
+        formData,
+      );
 
-      // Check if the request was successful (status code 2xx)
       if (response.ok) {
         console.log("User successfully registered");
-        // Optionally, you can redirect the user to the login page after successful registration
         navigate("/signin");
       } else {
-        // Handle errors for unsuccessful requests
         const data = await response.json();
         console.error("Registration failed:", data.error);
-        // Handle the error in your UI, show a message to the user, etc.
       }
     } catch (error) {
       console.error("Error during registration:", error);
-      // Handle the error in your UI, show a message to the user, etc.
     }
   };
 
   return (
-    // <div className="container mt-5 mb-5" style={{ maxWidth: "400px" }}>
-    <div className="signup-con">
-      <div
-        className="col-md-12 text-center p-4"
-        style={{ boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)" }}
-      >
-        <div className="text-center mb-4">
-          <h2 className="h3 mb-3 font-weight-bold font-['Saira'] text-danger">
-            Create an account
-          </h2>
-        </div>
-        <form onSubmit={handleSubmit}>
-          <div className="form-group mb-3">
+    <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 bg-slate-300">
+      <div className="sm:mx-auto sm:w-full sm:max-w-sm flex flex-col items-center">
+        <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
+          Create an account
+        </h2>
+      </div>
+
+      <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+        <form className="space-y-6" onSubmit={handleSubmit}>
+          <div>
             <input
               type="text"
               id="fullName"
-              className="form-control font-['Saira']"
+              className="block w-full rounded-md border-0 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-5"
               placeholder="Full Name"
               required
               onChange={handleInputChange}
             />
           </div>
-          <div className="form-group mb-3">
+
+          <div>
             <input
               type="tel"
               id="mobileNumber"
-              className="form-control font-['Saira']"
+              className="block w-full rounded-md border-0 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-5"
               placeholder="Mobile Number"
               required
               onChange={handleInputChange}
             />
           </div>
-          <div className="form-group mb-3">
+
+          <div>
             <input
               type="email"
               id="email"
-              className="form-control font-['Saira']"
+              className="block w-full rounded-md border-0 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-5"
               placeholder="Email"
               required
               onChange={handleInputChange}
             />
           </div>
-          <div className="form-group mb-3">
+
+          <div>
             <select
               id="gender"
-              className="form-control font-['Saira']"
+              className="block w-full rounded-md border-0 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-5"
               onChange={handleInputChange}
             >
               <option value="Male">Male</option>
               <option value="Female">Female</option>
             </select>
           </div>
-          <div className="form-group mb-3">
+
+          <div>
             <input
               type="date"
               id="dateOfBirth"
-              className="form-control font-['Saira']"
+              className="block w-full rounded-md border-0 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-5"
               placeholder="Date of Birth"
               required
               onChange={handleInputChange}
             />
           </div>
-          <div className="form-group mb-3">
+
+          <div>
             <input
               type="text"
               id="location"
-              className="form-control font-['Saira']"
+              className="block w-full rounded-md border-0 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-5"
               placeholder="Location"
               required
               onChange={handleInputChange}
             />
           </div>
-          <div className="form-group mb-3">
+
+          <div>
             <input
               type="tel"
               id="alternateNumber"
-              className="form-control font-['Saira']"
+              className="block w-full rounded-md border-0 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-5"
               placeholder="Alternate Number"
               onChange={handleInputChange}
             />
           </div>
-          {/* <div className="form-group mb-3">
-              <input
-                type="password"
-                id="password"
-                className="form-control font-['Saira']"
-                placeholder="Password"
-                required
-                onChange={handleInputChange}
-              />
-            </div> */}
 
-          <button
-            type="submit"
-            className="btn btn-danger btn-block mx-auto mt-2 font-['Saira']"
-            style={{ width: "200px" }}
-          >
-            SIGN UP
-          </button>
-        </form>
-        <div className="text-center mt-3">
-          <p className="mb-2">
-            Already have an account?{" "}
-            <span
-              className="text-primary cursor-pointer font-['Saira']"
-              onClick={handleLoginClick}
+          <div>
+            <button
+              type="submit"
+              className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold leading-5 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
-              Log In
-            </span>
-          </p>
+              Sign Up
+            </button>
+          </div>
+        </form>
+
+        <div className="mt-10 text-center text-sm text-gray-500">
+          Already have an account?
+          <span
+            className="font-semibold leading-5 text-indigo-600 hover:text-indigo-500 cursor-pointer"
+            onClick={() => navigate("/signin")}
+          >
+            Log In
+          </span>
         </div>
       </div>
     </div>
-    // </div>
   );
-}
+};
+
+export default Signup;

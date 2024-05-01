@@ -16,7 +16,7 @@ const LoginForm = () => {
     try {
       const response = await axios.post(
         "https://glr-be.onrender.com/user/login",
-        { mobileNumber }
+        { mobileNumber },
       );
       console.log("Form submitted:", response);
       navigate("/otp", { state: { mobileNumber } }); // Pass mobileNumber in state
@@ -93,7 +93,13 @@ const LoginForm = () => {
           >
             Register here for free
           </a>
-          <p onClick={()=>{navigate('/adminnavbar')}}>Admin login</p>
+          <p
+            onClick={() => {
+              navigate("/adminnavbar");
+            }}
+          >
+            Admin login
+          </p>
         </p>
       </div>
     </div>

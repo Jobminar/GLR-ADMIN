@@ -1,43 +1,48 @@
 import React from 'react'
 import Coursedata from './course'
 import './homecourses.css'
-import { Data } from '../Contextprovider';
-import { useContext } from 'react';
+// import { Data } from '../Contextprovider';
+// import { useContext } from 'react';
+import development from '../../assets/images/dev.png'
+import marketing from '../../assets/images/marketing.png'
+import web from '../../assets/images/web.png'
+import business from '../../assets/images/business.png'
 
 const Homecources = () => {
-  const { coursedata } = useContext(Data);
+  // const { coursedata } = useContext(Data);
   return (
     <>
     <div className='home-courses-con'>
     <div className='course-head-navigation'>
              <h1>Fast track your progress<br/> with our course guide.</h1>
              <button>View all courses</button>
-        </div>
-        <div className='course-main-con'>
-        {coursedata.slice(0,4).map(course => (
-          <div key={course._id} className='course-sub-con'>
-            
-                  <div className='course-image'>
-                    <img
-                        src={`data:image/png;base64, ${course.courseImage}`}
-                        alt={`Item ${course.blogName}`}
-                      />
-                  </div>
-                  <div className='courses-content'>
-                    <h3>{course.title}</h3>
-                    <p>{course.description.substring(0, 80)}</p> {/* Displaying only first 100 characters */}
-                    
-                 
-                  </div>
-                  <div className='price-explore'>
-                       <p>${course.price}</p>
-                       <button>Explore</button>
-                  </div>
+    </div>
+       <div className='course-s-con'>
+          <div className='course-s-sub-con'>
+            <div>
+            <img src={development} alt='course-main'/>
+            </div>
+              <p>Development</p>
           </div>
-          
-        ))}
-      </div>
-      
+          <div className='course-s-sub-con'>
+            <div>
+            <img src={web} alt='course-main'/>
+            </div>
+            <p>Web Development</p>
+          </div>
+          <div className='course-s-sub-con'>
+            <div>
+            <img src={business} alt='course-main'/>
+            </div>
+             <p>Business</p>
+          </div>
+          <div className='course-s-sub-con'>
+            <div>
+            <img src={marketing} alt='course-main'/>
+            </div>
+            <p>Marketing</p>
+          </div>
+       </div>
     </div>
       
 

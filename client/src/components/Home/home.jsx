@@ -7,6 +7,8 @@ import Blogsandregister from './blogs&register'
 import Notificationshome from './notifications'
 import './home.css'
 import mainimg from '../../assets/images/banner.png'
+import Homecarousel from './homecarousel'
+import Gallery from './homecarousel'
 
 const Home = () => {
   const {fullname} = useContext(Data)
@@ -19,9 +21,9 @@ const Home = () => {
             <Notificationshome/>
             <Homecources/>
             <Homeaboutus/>
-            <Blogsandregister/>
+            <Blogsandregister/> 
+            <Gallery/>
           </div>
-
       </>
   )
 }

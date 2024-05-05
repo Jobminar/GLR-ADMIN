@@ -39,7 +39,7 @@ function Routing() {
           {/* <Route path="/student" element={<Student />} /> */}
           {/* <Route path="/getstudent" element={<GetStudent />} /> */}
           {/* Admin routing */}
-          {/* <Route path="/adminnavbar" element={<Adminnavbar />} />
+          <Route path="/adminnavbar" element={<Adminnavbar />} />
           <Route
             path="/Courseupload"
             element={
@@ -63,7 +63,7 @@ function Routing() {
                 <Careersupload />
               </Adminnavbar>
             }
-          /> */}
+          />
         </Routes>
       </BrowserRouter>
     </>

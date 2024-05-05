@@ -1,5 +1,5 @@
 .top-header{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     height: 4rem;
     background-color: #0E0A38;
     display: grid;
@@ -16,6 +16,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 23%;
 }
 .main-course-search input{
     background-color: #FFFFFF;
@@ -44,4 +45,52 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
+}
+
+
+/* main header */
+.main-header{
+    /* border: 1px solid black; */
+    height: 6rem;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    align-items: center;
+
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo img{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 5px;
+}
+.nav-items{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24.2px;
+    text-align: left;
+
+}
+.nav-items P:hover{
+    color: #DF4B2D;
+    cursor: pointer;
+}
+
+.login-button{
+    display: flex;
+    justify-content: center;
+    /* background-color: #DF4B2D; */
+}
+.login-button button{
+    background-color: #DF4B2D;
+    padding: 0.5rem;
+    border-radius: 10px;
+    color: #FFFFFF;
 }

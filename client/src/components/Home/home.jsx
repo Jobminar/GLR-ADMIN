@@ -8,7 +8,7 @@ import Notificationshome from "./notifications";
 import "./home.css";
 
 import Gallery from "./homecarousel";
-import MyCarousal from "./Carousal";
+import MyCarousal from "./Carousel";
 
 const Home = () => {
   const { fullname } = useContext(Data);

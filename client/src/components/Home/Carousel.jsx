@@ -1,8 +1,8 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
-import Image1 from "../../assets/images/course1.png";
-import Image2 from "../../assets/images/course2.png";
-import Image3 from "../../assets/images/course3.png";
+import Image1 from "../../assets/images/image1.jpg";
+import Image2 from "../../assets/images/image2.jpg";
+import Image3 from "../../assets/images/image3.jpg";
 
 const MyCarousel = () => {
   return (
@@ -11,7 +11,14 @@ const MyCarousel = () => {
       indicators={true}
       interval={3000}
       pause="hover"
-      style={{ margin: "0", width: "100vw" }}
+      style={{
+        margin: "0",
+        width: "98vw",
+        padding: "1.8px",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
     >
       <Carousel.Item>
         <img
@@ -22,7 +29,6 @@ const MyCarousel = () => {
             height: "auto",
             maxHeight: "85vh",
             objectFit: "contain",
-            margin: "0.1px",
           }}
         />
         <Carousel.Caption>

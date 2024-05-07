@@ -12,7 +12,7 @@ const MyCarousel = () => {
       interval={3000}
       pause="hover"
       style={{
-        margin: "0",
+        marginLeft: "3px",
         width: "98vw",
         padding: "1.8px",
         display: "flex",

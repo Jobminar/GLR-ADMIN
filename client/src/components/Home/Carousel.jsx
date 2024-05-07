@@ -11,14 +11,19 @@ const MyCarousel = () => {
       indicators={true}
       interval={3000}
       pause="hover"
-      style={{ margin: "1rem" }}
+      style={{ margin: "0", width: "100vw" }}
     >
       <Carousel.Item>
         <img
           className="d-block w-100"
           src={Image3}
           alt="First slide"
-          style={{ height: "300px", objectFit: "cover", margin: "0.1px" }}
+          style={{
+            height: "auto",
+            maxHeight: "85vh",
+            objectFit: "contain",
+            margin: "0.1px",
+          }}
         />
         <Carousel.Caption>
           <h3>First slide label</h3>
@@ -29,7 +34,7 @@ const MyCarousel = () => {
           className="d-block w-100"
           src={Image1}
           alt="Second slide"
-          style={{ height: "300px", objectFit: "cover" }}
+          style={{ height: "auto", maxHeight: "85vh", objectFit: "contain" }}
         />
         <Carousel.Caption>
           <h3>Second slide label</h3>
@@ -40,7 +45,7 @@ const MyCarousel = () => {
           className="d-block w-100"
           src={Image2}
           alt="Third slide"
-          style={{ height: "300px", objectFit: "cover" }}
+          style={{ height: "auto", maxHeight: "85vh", objectFit: "contain" }}
         />
         <Carousel.Caption>
           <h3>Third slide label</h3>

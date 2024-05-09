@@ -7,8 +7,9 @@ import Blogsandregister from "./blogs&register";
 import Notificationshome from "./notifications";
 import "./home.css";
 
-import Gallery from "./homecarousel";
+
 import MyCarousal from "./Carousal";
+import Gallery from "./homegallery";
 
 const Home = () => {
   const { fullname } = useContext(Data);
@@ -22,7 +23,7 @@ const Home = () => {
         <Homecources />
         <Homeaboutus />
         <Blogsandregister />
-        <Gallery />
+        <Gallery/>
       </div>
     </>
   );

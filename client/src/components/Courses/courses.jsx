@@ -25,8 +25,8 @@ const Courses = () => {
                  
                   </div>
                   <div className='price-explore'>
-                       <p>${course.price}</p>
-                       <button>Explore</button>
+                       <p>&#8377; {course.price}</p>
+                       <button style={{borderRadius:"10px"}}>Explore</button>
                   </div>
                  
           

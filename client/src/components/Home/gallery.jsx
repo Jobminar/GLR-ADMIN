@@ -7,6 +7,7 @@ import development from '../../assets/images/dev.png'
 import marketing from '../../assets/images/marketing.png'
 import web from '../../assets/images/web.png'
 import business from '../../assets/images/business.png'
+import './gallery.css'
 
 const itemData = [
   {
@@ -48,25 +49,8 @@ const itemData = [
     img: marketing,
     title: "Fern",
   },
-  {
-    img: development,
-    title: "Mushrooms",
-    rows: 2,
-    cols: 2,
-  },
-  {
-    img: web,
-    title: "Tomato basil",
-  },
-  {
-    img: vector,
-    title: "Sea star",
-  },
-  {
-    img: business,
-    title: "Bike",
-    cols: 2,
-  },
+ 
+
 ];
 
 function srcset(image, size, rows = 1, cols = 1) {
@@ -80,7 +64,9 @@ function srcset(image, size, rows = 1, cols = 1) {
 
 export default function Gallery() {
   return (
-    <ImageList
+    <div className="gallery-main">
+    <h1 className="gallery-head">Gallery</h1>
+     <ImageList
       sx={{ width: "100%", height: "100%" }}
       variant="quilted"
       cols={4}
@@ -100,5 +86,8 @@ export default function Gallery() {
         </ImageListItem>
       ))}
     </ImageList>
-  );
+
+    
+    </div>
+     );
 }

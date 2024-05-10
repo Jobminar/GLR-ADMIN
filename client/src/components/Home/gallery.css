@@ -1,0 +1,15 @@
+.gallery-head{
+    font-family: Inter;
+font-size: 35px;
+font-weight: 600;
+line-height: 38.73px;
+text-align: center;
+margin: 1rem;
+color: 
+#DF4B2D;
+
+}
+.gallery-main{
+    /* border: 1px solid black; */
+    margin: 1rem 2rem;
+}

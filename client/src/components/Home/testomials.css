@@ -1,0 +1,63 @@
+.testomial-con{
+    border: 1px solid black;
+    margin: 2rem;
+}
+
+
+.testomial-con h1{
+    font-family: Inter;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 29.05px;
+    text-align: center;
+    color: #DF4B2D;
+}
+.testomial-con p{
+    font-family: Inter;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 45.73px;
+    text-align: center;
+
+}
+.testomial-main-con{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: space-evenly;
+}
+.testomial-sub-con{
+    width: 20rem;
+    height: 15rem;
+    /* border: 1px solid black; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-rows: 40% 50%;
+
+}
+.testomial-image{
+    border: 1px solid black;
+}
+.testomial-image{
+    padding-top:1rem ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.testomial-head{
+    font-family: Arima;
+font-size: 24px;
+font-weight: 500;
+line-height: 39.19px;
+letter-spacing: 0.06em;
+text-align: left;
+
+}
+.testomial-con{
+    font-family: Arima;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22.86px;
+    letter-spacing: 0.04em;
+    text-align: center;
+
+}

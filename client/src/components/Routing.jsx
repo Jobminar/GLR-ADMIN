@@ -17,6 +17,7 @@ import Blogpreview from "./Blogs/blogpreview";
 import Student from "./Contactus/Student";
 import GetContact from "./Contactus/GetContact";
 import CourseExplore from "./Courses/courseExplore";
+import Footer from "./Footer/footer";
 
 function Routing() {
   return (
@@ -65,6 +66,7 @@ function Routing() {
             }
           />
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </>
   );

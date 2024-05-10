@@ -1,74 +1,82 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import axios from 'axios';
+import axios from "axios";
 import "./signup.css";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 export default function Signup() {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: '',
-    mobile: '',
-    dateOfBirth: '',
-    qualification: '',
-    branch: '',
-    passedOutYear: '',
-    deviceId: '', 
-    privacyPolicy: false
+    name: "",
+    email: "",
+    password: "",
+    mobile: "",
+    dateOfBirth: "",
+    qualification: "",
+    branch: "",
+    passedOutYear: "",
+    deviceId: "",
+    privacyPolicy: false,
   });
- 
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:4000/signup', formData);
+      const response = await axios.post(
+        "http://localhost:4000/signup",
+        formData,
+      );
       console.log(response.data);
-      
+
       // Display success message
       Swal.fire({
-        icon: 'success',
-        title: 'Signup Successful!',
-        text: 'You have successfully signed up.',
+        icon: "success",
+        title: "Signup Successful!",
+        text: "You have successfully signed up.",
       });
 
       // Redirect or do something else upon successful signup
     } catch (error) {
       Swal.fire({
-        icon: 'error',
-        title: 'Failed to success!',
+        icon: "error",
+        title: "Failed to success!",
         text: error,
       });
-      console.error('Error signing up:', error);
+      console.error("Error signing up:", error);
     }
   };
 
   const handleLoginClick = () => {
     // Define the logic for handling login click
-    navigate('/login'); // Example navigation to login page
+    navigate("/signin"); // Example navigation to login page
   };
-
-
-
 
   return (
     <div className="signup-con">
-      <div className="col-md-12 text-center p-4" style={{ boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)" }}>
+      <div
+        className="col-md-12 text-center p-4"
+        style={{ boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)" }}
+      >
         <div className="text-center mb-4">
-          <h2 className="h3 mb-3 font-weight-bold" style={{ fontFamily: "Saira", color: "red" }}>Create an account</h2>
+          <h2
+            className="h3 mb-3 font-weight-bold"
+            style={{ fontFamily: "Saira", color: "red" }}
+          >
+            Create an account
+          </h2>
         </div>
         <form onSubmit={handleSubmit}>
           <div className="form-group mb-3">
             <input
-              name='name'
+              name="name"
               type="text"
               id="Name"
               className="form-control"
@@ -80,7 +88,7 @@ export default function Signup() {
           </div>
           <div className="form-group mb-3">
             <input
-              name='email'
+              name="email"
               type="email"
               id="email"
               className="form-control"
@@ -92,7 +100,7 @@ export default function Signup() {
           </div>
           <div className="form-group mb-3">
             <input
-              name='password'
+              name="password"
               type="password"
               id="password"
               className="form-control"
@@ -104,7 +112,7 @@ export default function Signup() {
           </div>
           <div className="form-group mb-3">
             <input
-              name='mobile'
+              name="mobile"
               type="tel"
               id="mobile"
               className="form-control"
@@ -116,7 +124,7 @@ export default function Signup() {
           </div>
           <div className="form-group mb-3">
             <input
-              name='dateOfBirth'
+              name="dateOfBirth"
               type="date"
               id="dateOfBirth"
               className="form-control"
@@ -128,7 +136,7 @@ export default function Signup() {
           </div>
           <div className="form-group mb-3">
             <input
-              name='qualification'
+              name="qualification"
               type="text"
               id="qualification"
               className="form-control"
@@ -140,7 +148,7 @@ export default function Signup() {
           </div>
           <div className="form-group mb-3">
             <input
-              name='branch'
+              name="branch"
               type="text"
               id="branch"
               className="form-control"
@@ -152,7 +160,7 @@ export default function Signup() {
           </div>
           <div className="form-group mb-3">
             <input
-              name='passedOutYear'
+              name="passedOutYear"
               type="text"
               id="passedOutYear"
               className="form-control"
@@ -164,7 +172,7 @@ export default function Signup() {
           </div>
           <div className="form-group mb-3">
             <input
-              name='deviceId'
+              name="deviceId"
               type="text"
               id="deviceId"
               className="form-control"
@@ -181,7 +189,12 @@ export default function Signup() {
               className="form-check-input"
               required
               checked={formData.privacyPolicy}
-              onChange={() => setFormData({ ...formData, privacyPolicy: !formData.privacyPolicy })}
+              onChange={() =>
+                setFormData({
+                  ...formData,
+                  privacyPolicy: !formData.privacyPolicy,
+                })
+              }
             />
             <label htmlFor="privacyPolicy" className="form-check-label">
               I agree to the privacy policy

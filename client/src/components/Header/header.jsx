@@ -1,15 +1,20 @@
-import React from 'react';
+import React from "react";
 import "./header.css";
-import logo from '../../assets/images/logo.jpeg';
-import call from '../../assets/images/call-icon.png';
-import mail from '../../assets/images/mail-icon.png';
-import facebook from '../../assets/images/facebook.png';
-import x from '../../assets/images/x.png';
-import insta from '../../assets/images/insta.png';
+import logo from "../../assets/images/logo.jpeg";
+import call from "../../assets/images/call-icon.png";
+import mail from "../../assets/images/mail-icon.png";
+import facebook from "../../assets/images/facebook.png";
+import x from "../../assets/images/x.png";
+import insta from "../../assets/images/insta.png";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const navigate = useNavigate();
+
+  const handleLoginClick = () => {
+    // Navigate to /signup route
+    navigate("/signup");
+  };
 
   return (
     <>
@@ -38,15 +43,15 @@ const Navbar = () => {
           <img src={logo} alt="logo" />
         </div>
         <div className="nav-items">
-          <p onClick={() => navigate('/')}>Home</p>
-          <p onClick={() => navigate('/Aboutus')}>About us</p>
-          <p onClick={() => navigate('/Courses')}>Courses</p>
-          <p onClick={() => navigate('/Careers')}>Careers</p>
-          <p onClick={() => navigate('/Contactus')}>Contact us</p>
-          <p onClick={() => navigate('/Blogs')}>Blog</p>
+          <p onClick={() => navigate("/")}>Home</p>
+          <p onClick={() => navigate("/Aboutus")}>About us</p>
+          <p onClick={() => navigate("/Courses")}>Courses</p>
+          <p onClick={() => navigate("/Careers")}>Careers</p>
+          <p onClick={() => navigate("/Contactus")}>Contact us</p>
+          <p onClick={() => navigate("/Blogs")}>Blog</p>
         </div>
         <div className="login-button">
-          <button>Login / Register</button>
+          <button onClick={handleLoginClick}>Login / Register</button>
         </div>
       </div>
     </>

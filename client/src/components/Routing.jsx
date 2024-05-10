@@ -17,12 +17,13 @@ import Blogpreview from "./Blogs/blogpreview";
 import Student from "./Contactus/Student";
 import GetContact from "./Contactus/GetContact";
 import CourseExplore from "./Courses/courseExplore";
+import GLRAdminForm from "./Authentication/GLRAdminForm";
 
 function Routing() {
   return (
     <>
       <BrowserRouter>
-        <Navbar/>
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Aboutus" element={<Aboutus />} />
@@ -40,6 +41,7 @@ function Routing() {
           {/* <Route path="/getstudent" element={<GetStudent />} /> */}
           {/* Admin routing */}
           <Route path="/adminnavbar" element={<Adminnavbar />} />
+          <Route path="/glradmin" element={<GLRAdminForm />} />
           <Route
             path="/Courseupload"
             element={

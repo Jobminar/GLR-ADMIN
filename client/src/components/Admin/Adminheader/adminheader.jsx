@@ -16,9 +16,10 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
 import logo from "../../../assets/images/logo.jpeg";
-import "./adminheader.css";
+import ExitToAppIcon from "@mui/icons-material/ExitToApp";
+
 const drawerWidth = 240;
-const navItems = ["Courseupload", "Blogsupload", "Careersupload"];
+const navItems = ["Courseupload", "Blogsupload", "Careersupload", "Logout"];
 
 function Adminnavbar(props) {
   const navigate = useNavigate();
@@ -27,6 +28,18 @@ function Adminnavbar(props) {
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("authToken");
+    navigate("/");
+  };
+
+  const confirmLogout = () => {
+    const confirmLogout = window.confirm("Are you sure you want to logout?");
+    if (confirmLogout) {
+      handleLogout();
+    }
   };
 
   const drawer = (
@@ -41,13 +54,18 @@ function Adminnavbar(props) {
       </Typography>
       <Divider />
       <List>
-        {navItems.map((item) => (
+        {navItems.map((item, index) => (
           <ListItem key={item} disablePadding>
             <ListItemButton
               sx={{ textAlign: "center" }}
-              onClick={() => navigate("/" + item)}
+              onClick={() =>
+                index === navItems.length - 1
+                  ? confirmLogout()
+                  : navigate("/" + item)
+              }
             >
               <ListItemText primary={item} />
+              {index === navItems.length - 1 && <ExitToAppIcon />}
             </ListItemButton>
           </ListItem>
         ))}
@@ -81,7 +99,6 @@ function Adminnavbar(props) {
               src={logo}
               alt="chandra"
               style={{ width: "15%", height: "50px" }}
-              onClick={() => navigate("/")}
             />
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>

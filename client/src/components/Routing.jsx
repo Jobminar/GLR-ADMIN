@@ -18,12 +18,13 @@ import Student from "./Contactus/Student";
 import GetContact from "./Contactus/GetContact";
 import CourseExplore from "./Courses/courseExplore";
 import Footer from "./Footer/footer";
+import GLRAdminForm from "./Authentication/GLRAdminForm";
 
 function Routing() {
   return (
     <>
       <BrowserRouter>
-        <Navbar/>
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Aboutus" element={<Aboutus />} />
@@ -41,6 +42,8 @@ function Routing() {
           {/* <Route path="/getstudent" element={<GetStudent />} /> */}
           {/* Admin routing */}
           <Route path="/adminnavbar" element={<Adminnavbar />} />
+          {/*this is  Admin form routing */}
+          <Route path="/glradmin" element={<GLRAdminForm />} />
           <Route
             path="/Courseupload"
             element={

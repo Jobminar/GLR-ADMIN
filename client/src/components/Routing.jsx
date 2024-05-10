@@ -41,6 +41,7 @@ function Routing() {
           {/* <Route path="/getstudent" element={<GetStudent />} /> */}
           {/* Admin routing */}
           <Route path="/adminnavbar" element={<Adminnavbar />} />
+          {/*this is  Admin form routing */}
           <Route path="/glradmin" element={<GLRAdminForm />} />
           <Route
             path="/Courseupload"
